@@ -1,23 +1,27 @@
 import React from "react";
-import Header from "./Header";
-import Footer from "./Footer";
-import Content from "./Content";
-import notes from "../notes";
+import Register from "./Register";
+
+//Single responsibility
+//using double upper sand
+//const currentTime = new Date().getHours()
+//currentTime > 12 && <h1>Hello </h1>
+//this will return Hello if currentTIme is true and null if it is not 
+
+// { isLoggedin ? <h1>Hello</h1> : <Login /> } 
 
 
+var userIsRegistered = false;
 
 function App() {
-    return <div>
-        <Header />
-        {notes.map(returnNote => (
-            <Content 
-                 key =  { returnNote.key }
-                title =  { returnNote.title }
-                content = { returnNote.content }
-            />
-        ))}
-        <Footer />
+  return (
+    <div className="container">
+      
+    <Register 
+        isRegistered = {userIsRegistered}
+    />
+
     </div>
+  );
 }
 
 export default App;
